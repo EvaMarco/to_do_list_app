@@ -1,0 +1,11 @@
+:local(.HeaderComponent) {
+    height: 60px;
+    background-color: rgb(183, 247, 225);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+:local(.HeaderTitle) {
+    padding: 0;
+    margin: 0;
+}

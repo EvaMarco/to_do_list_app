@@ -2,6 +2,10 @@ import React from 'react';
 import './App.css';
 import AddToDo from "./components/AddToDo";
 import ToDoList from "./components/ToDoList";
+import Header from "./components/Header";
+import { connect } from 'react-redux';
+
+
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -13,12 +17,10 @@ class App extends React.Component {
     render() {
         return (
             <div className="App">
-                <header>
-                    To Do List
-                </header>
-                <main>
-                    <AddToDo></AddToDo>
-                    <ToDoList></ToDoList>
+                <Header />
+                <main className="main_container">
+                    <AddToDo/>
+                    <ToDoList/>
                 </main>
                 <footer>
                     footer
