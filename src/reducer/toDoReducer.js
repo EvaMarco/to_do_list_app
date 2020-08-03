@@ -1,10 +1,21 @@
+import { ADD_TODO, TOGGLE_TODO } from "../actions/actionTypes";
+
 function toDoReducer(state, action) {
-    if (action.type === 'INCREMENT') {
-        return state + 1
-    } else if (action.type === 'DECREMENT') {
-        return state - 1
-    } else {
-        return state // In case an action is passed in we don't understand
+    console.log(state.initialState)
+    switch (action.type) {
+        case ADD_TODO: {
+            const { id, content } = action.payload;
+            console.log(content);
+            state.initialState.allIds.push(id);
+            const newElement ={
+                content,
+                completed: false
+            }
+            state.initialState.byIds[id]= newElement;
+            return state
+        }
+        default:
+            return state;
     }
 }
-export default  toDoReducer;
+export default toDoReducer;

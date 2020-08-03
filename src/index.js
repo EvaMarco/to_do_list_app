@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import { Provider } from 'react-redux';
 import { createStore } from "redux";
 import toDoReducer from "./reducer/toDoReducer";
 import initialState from "./store/initialState";
-import { Provider } from 'react-redux';
 let store = createStore(toDoReducer, initialState);
 
 ReactDOM.render(
