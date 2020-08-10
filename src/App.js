@@ -1,31 +1,18 @@
 import React from 'react';
 import './App.css';
-import AddToDo from "./components/AddToDo";
-import ToDoList from "./components/ToDoList";
 import Header from "./components/Header";
+import Footer from './components/Footer'
+import AddTodo from './containers/AddTodo'
+import VisibleTodoList from './containers/VisibleTodoList'
 
-class App extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state={
-            value: ",",
-        }
-    }
+const App = () => (
+    <div>
+        <Header />
+        <AddTodo />
+        <VisibleTodoList />
+        <Footer />
+    </div>
+)
 
-    render() {
-        return (
-            <div className="App">
-                <Header />
-                <main className="main_container">
-                    <AddToDo/>
-                    <ToDoList/>
-                </main>
-                <footer>
-                    footer
-                </footer>
-            </div>
-        );
-    }
-}
 
 export default App;

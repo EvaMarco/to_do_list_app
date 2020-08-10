@@ -1,15 +1,21 @@
 import React from "react";
-import { connect } from "react-redux";
+import PropTypes from 'prop-types';
 
-const Todo = ({ todo }) => (
-  <li className="todo-item" >
-    {todo && todo.completed ? "👌" : "👋"}{" "}
-    <span
-    >
-      {todo.content}
-    </span>
+const Todo = ({ onClick, completed, text }) => (
+  <li
+    onClick={onClick}
+    style={{
+      textDecoration: completed ? 'line-through' : 'none'
+    }}
+  >
+    {text}
   </li>
-);
+)
 
-// export default Todo;
-export default Todo;
+Todo.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  completed: PropTypes.bool.isRequired,
+  text: PropTypes.string.isRequired
+}
+
+export default Todo
